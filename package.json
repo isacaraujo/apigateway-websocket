@@ -1,0 +1,19 @@
+{
+  "name": "apigateway-websocket",
+  "version": "1.0.0",
+  "description": "aws apigateway sample",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isacaraujo/apigateway-websocket.git"
+  },
+  "author": "Isac Araujo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isacaraujo/apigateway-websocket/issues"
+  },
+  "homepage": "https://github.com/isacaraujo/apigateway-websocket#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
