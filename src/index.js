@@ -6,10 +6,12 @@ const app = express();
 app.use(bodyParser.raw());
 app.use(bodyParser.text());
 app.use(bodyParser.json());
+app.use(express.json());
 
 app.post('/events', async (req, res) => {
 	console.log(new Date(), '>>> Headers: ', req.headers, ' >>> ', req.body);
-	res.end('ok');
+	res.status(200)
+		.send({connected: true});
 });
 
 app.listen(3000, () => {
