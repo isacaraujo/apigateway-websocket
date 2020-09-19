@@ -7,7 +7,7 @@ const wsDomainName = process.env.WEBSOCKET_ENDPOINT.replace('wss://', '');
 
 const apigatewaymanagementapi = new AWS.ApiGatewayManagementApi({
 	apiVersion: '2018-11-29',
-	endpoint:  + `${wsDomainName}/Prod`,
+	endpoint: `${wsDomainName}/Prod`,
 });
 
 const app = express();
