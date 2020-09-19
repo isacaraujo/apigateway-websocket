@@ -3,8 +3,11 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const AWS = require('aws-sdk');
 
+const wsDomainName = process.env.WEBSOCKET_ENDPOINT.replace('wss://', '');
+
 const apigatewaymanagementapi = new AWS.ApiGatewayManagementApi({
-	endpoint: process.env.WEBSOCKET_ENDPOINT,
+	apiVersion: '2018-11-29',
+	endpoint:  + `${wsDomainName}/Prod`,
 });
 
 const app = express();

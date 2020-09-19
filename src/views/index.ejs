@@ -65,7 +65,7 @@
             </div>
         </div>
         <script>
-            function sendmesage(socket, msg) {
+            function sendmessage(socket, msg) {
                 socket.send(JSON.stringify({action: 'sendmessage', data: msg}));
                 $('#messages').append('<li>' + msg + '</li>');
                 $('#messageme').val('');
@@ -78,7 +78,7 @@
 
                 socket.addEventListener('message', function (event) {
                     console.log('Message from server ', event.data);
-                    $('#messages').append('<li>' + event.data + '</li>');
+                    $('#messages').append('<li>Received: ' + event.data + '</li>');
                 });
 
                 socket.addEventListener('close', function (event) {
@@ -98,7 +98,7 @@
                 $('#clickme').on('click', () => {
                     if (!socket) return;
                     const msg = $('#messageme').val();
-                    sendmesage(socket, msg);
+                    sendmessage(socket, msg);
                 });
                 $('#bt_connect').on('click', () => {
                     socket = new WebSocket('<%= websocketUri %>');
